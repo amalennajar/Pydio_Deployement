@@ -1,0 +1,48 @@
+---
+- name: install jenkins
+  hosts: myVM
+  become: yes
+  become_user: root
+  tasks:
+  - name: Update APT package cache
+    ansible.builtin.apt:
+      update_cache: yes
+      cache_valid_time: 3600  # optional, set the cache expiration time (in seconds)
+
+
+  - name: Add the Jenkins repo
+    ansible.builtin.apt_repository:
+      repo: deb https://pkg.jenkins.io/debian-stable binary/
+      state: present
+
+  - name: Download Jenkins key
+    ansible.builtin.get_url:
+      url: https://pkg.jenkins.io/debian/jenkins.io-2023.key
+      dest: /usr/share/keyrings/jenkins-keyring.asc
+
+  - name: Update APT package cache
+    ansible.builtin.apt:
+      update_cache: yes
+      cache_valid_time: 3600
+
+
+  - name: Install fontconfig
+    apt:
+      name: fontconfig
+      state: present
+
+  - name: Install OpenJDK 17 JRE
+    apt:
+      name: openjdk-17-jre
+      state: present
+
+  - name: install jenkins
+    apt:
+      name: jenkins
+      state: present
+
+  - name: start jenkins
+    ansible.builtin.systemd:
+      enabled: yes
+      name: jenkins
+      state: started
