@@ -26,10 +26,10 @@ CI-CD-Project/
 |       
 │
 ├── ansible/                 # Ansible playbook for Jenkins setup
-│   ├── playbook ansible.yml
+│   ├── jenkins-setup.yml
 │   
 |
-├── docker-compose/                  # Dockerfiles for Pydio and MySQL
+├── docker-compose/                  # Docker-Compose file for Pydio and MySQL
 │   ├── install-conf.yml
 │   │
 │   ├── docker-compose.yml
@@ -75,24 +75,8 @@ CI-CD-Project/
     ```
 
 ## Step 3: Dockerize Pydio and MySQL
-1. Create a Dockerfile for Pydio (docker/pydio/Dockerfile):
-
-    ```Dockerfile
-    FROM pydio/cells:latest
-    # Add additional configurations if needed
-    ```
-
-2. Create a Dockerfile for MySQL (docker/mysql/Dockerfile):
-
-    ```Dockerfile
-    FROM mysql:latest
-    # Add additional configurations if needed
-    ```
+- Create a Docker-Compose file for Pydio and MySQL
 
 ## Step 4: Jenkins Pipeline for Docker Compose
-1. Create a Jenkins pipeline job and
-
-    ```groovy
-    # ... (Copy the provided Jenkinsfile)
-    ```
+- Create a Jenkins pipeline job 
 
