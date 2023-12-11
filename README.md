@@ -38,3 +38,61 @@ CI-CD-Project/
 ├── Jenkinsfile              # Jenkins pipeline script
 
 ```
+# Project Steps:
+
+## Step 1: Provision Azure VM with Terraform
+1. Navigate to the terraform directory:
+
+    ```bash
+    cd terraform/
+    ```
+
+2. Initialize Terraform:
+
+    ```bash
+    terraform init
+    ```
+
+3. Apply the Terraform configuration:
+
+    ```bash
+    terraform apply
+    ```
+
+## Step 2: Install Jenkins on Azure VM with Ansible
+1. Navigate to the ansible directory:
+
+    ```bash
+    cd ansible/
+    ```
+
+2. Update the hosts file with the Azure VM IP address.
+
+3. Run the Ansible playbook:
+
+    ```bash
+    ansible-playbook -i hosts jenkins-setup.yml
+    ```
+
+## Step 3: Dockerize Pydio and MySQL
+1. Create a Dockerfile for Pydio (docker/pydio/Dockerfile):
+
+    ```Dockerfile
+    FROM pydio/cells:latest
+    # Add additional configurations if needed
+    ```
+
+2. Create a Dockerfile for MySQL (docker/mysql/Dockerfile):
+
+    ```Dockerfile
+    FROM mysql:latest
+    # Add additional configurations if needed
+    ```
+
+## Step 4: Jenkins Pipeline for Docker Compose
+1. Create a Jenkins pipeline job and
+
+    ```groovy
+    # ... (Copy the provided Jenkinsfile)
+    ```
+
