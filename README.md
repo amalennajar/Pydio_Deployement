@@ -22,19 +22,19 @@ CI-CD-Project/
 ├── terraform/               # Terraform configuration for Azure VM
 │   ├── main.tf
 │   ├── variables.tf
-│   └── ...
+│   └── providers.tf
+|   └── output.tf
+|       
 │
 ├── ansible/                 # Ansible playbook for Jenkins setup
-│   ├── hosts
-│   ├── jenkins-setup.yml
-│   └── ...
+│   ├── playbook ansible.yml
+│   
+|
+├── docker-compose/                  # Dockerfiles for Pydio and MySQL
+│   ├── install-conf.yml
+│   │
+│   ├── docker-compose.yml
 │
-├── docker/                  # Dockerfiles for Pydio and MySQL
-│   ├── pydio/
-│   │   └── Dockerfile
-│   ├── mysql/
-│   │   └── Dockerfile
-│   └── ...
 │
 ├── Jenkinsfile              # Jenkins pipeline script
-└── ...
+
