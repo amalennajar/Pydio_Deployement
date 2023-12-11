@@ -2,9 +2,8 @@
 # Terraform, Ansible, Docker, and Jenkins CI/CD Project
 
 ## Project Overview:
+![architecture](https://github.com/amalennajar/Pydio_Deployement/assets/121998001/0ffa31ca-a921-4659-b916-fcb8f8c292a2)
 
-
-![architecture](https://github.com/amalennajar/Pydio_Deployement/assets/121998001/d9ec4ec6-c8e5-4ba0-8769-447df3690459)
 This project combines Terraform, Ansible, Docker, and Jenkins to automate the creation of an Azure VM, install Jenkins, and deploy Pydio and MySQL containers using Docker Compose.
 
 ## Tools Used:
