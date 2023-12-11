@@ -1,4 +1,3 @@
-# Pydio_Deployement
 # Terraform, Ansible, Docker, and Jenkins CI/CD Project
 
 ## Project Overview:
