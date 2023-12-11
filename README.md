@@ -39,6 +39,3 @@ CI-CD-Project/
 ├── Jenkinsfile              # Jenkins pipeline script
 
 ```
-```
-ssh-keygen -t <cryptography_method>
-```
